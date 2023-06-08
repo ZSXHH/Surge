@@ -31,7 +31,7 @@ let args = getArgs();
 
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
 
-    content.push(`到期：${formatTime(expire)}`);
+    //content.push(`到期：${formatTime(expire)}`);
 
   }
 
@@ -47,9 +47,9 @@ let args = getArgs();
 
   $done({
 
-    title: `${args.title} | ${hour}:${minutes}`,
+    title: `名称：${args.title}   ${formatTime(expire)}`,
 
-    content: content.join("\n"),
+    content: content+   ${hour}:${minutes},
 
     icon: args.icon || "airplane.circle",
 
