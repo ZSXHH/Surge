@@ -19,7 +19,7 @@ let args = getArgs();
 
   let expire = args.expire || info.expire;
 
-  let content = [`用量：${bytesToSize(used)} | ${bytesToSize(total)}`];
+  //let content = [`用量：${bytesToSize(used)} | ${bytesToSize(total)}`];
 
   /**if (resetDayLeft) {
 
@@ -49,7 +49,7 @@ let args = getArgs();
 
     title: `名称：${args.title}   ${formatTime(expire)}`,
 
-    content: content+   ${hour}:${minutes},
+    content: `用量：${bytesToSize(used)} | ${bytesToSize(total)}   ${hour}:${minutes}`,
 
     icon: args.icon || "airplane.circle",
 
