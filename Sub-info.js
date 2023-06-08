@@ -49,7 +49,7 @@ let args = getArgs();
 
     title: `名称：${args.title}   ${formatTime(expire)}`,
 
-    content: `用量：${bytesToSize(used)} | ${bytesToSize(total)}   ${hour}:${minutes}`,
+    content: `用量：${bytesToSize(used)} | ${bytesToSize(total)} | ${hour}:${minutes}`,
 
     icon: args.icon || "airplane.circle",
 
