@@ -26,14 +26,16 @@ let args = getArgs();
     content.push(`重置：剩余${resetDayLeft}天`);
 
   }**/
+if (expire && expire !== "false") {
 
-	  if (expire && expire !== "false") {
+  if (/^[\d.]+$/.test(expire)) expire *= 1000;
 
-    if (/^[\d.]+$/.test(expire)) expire *= 1000;
-
-    //content.push(`到期：${formatTime(expire)}`);
-
+    var ed =`${formatTime(expire)}`;
   }
+  else{
+    var ed ="";
+      }
+	
 
   let now = new Date();
 
@@ -47,7 +49,7 @@ let args = getArgs();
 
   $done({
 
-    title: `名称：${args.title}   ${formatTime(expire)}`,
+    title: `名称：${args.title}   `+ed,
 
     content: `用量：${bytesToSize(used)} | ${bytesToSize(total)} | ${hour}:${minutes}`,
 
